@@ -1,8 +1,10 @@
+
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, deprecated_member_use, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'Pages/setting.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Color(0xFFEEEEEE),
       appBar: AppBar(
         backgroundColor: Color(0xFF263238),
@@ -282,3 +285,23 @@ BoxDecoration myBoxDecoration() {
     border: Border.all(),
   );
 }
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Text("BMi"),
+      ),
+      // ignore: deprecated_member_use
+      body: const Center(child: Text('GB Job-2')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const SettingPage()));
+        },
+        child: const Icon(Icons.settings),
+        backgroundColor: Colors.blueGrey,
+      ),
+
+    );
+  }
+}
+
